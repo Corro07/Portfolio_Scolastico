@@ -1,0 +1,108 @@
+:root {
+    --primary-blue: #5b6ee1;
+    --dark-blue: #4a5bc7;
+    --white: #ffffff;
+    --light-bg: #f4f5f9;
+    --dark-text: #333333;
+    --main-font: 'Segoe UI', Tahoma, sans-serif;
+    --title-font: 'Georgia', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--main-font); background-color: var(--light-bg); color: var(--white); line-height: 1.6; }
+
+.navbar { background-color: var(--primary-blue); padding: 1.2rem 0; position: relative; z-index: 1000; }
+.navbar ul { list-style: none; display: flex; justify-content: center; gap: 2.5rem; }
+.navbar a { color: var(--white); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; font-style: italic; letter-spacing: 1px; }
+
+.container { display: flex; height: calc(100vh - 58px); }
+.hero-section { flex: 7; background: linear-gradient(rgba(40,55,71,0.6), rgba(40,55,71,0.6)), url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1920&q=80') center/cover; display: flex; align-items: center; justify-content: center; }
+.hero-content h1 { font-family: var(--title-font); font-size: clamp(3rem, 8vw, 5.5rem); }
+
+.sidebar { flex: 3; background-color: var(--primary-blue); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
+.sidebar h2 { font-family: var(--title-font); font-size: 2.2rem; margin-bottom: 2.5rem; }
+
+.info, .contact { margin-bottom: 1.5rem; text-align: center; }
+
+.social-icons { display: flex; gap: 1.5rem; margin-bottom: 2.5rem; }
+
+.social-icons a { color: var(--white); font-size: 1.8rem; transition: transform 0.3s ease; }
+.social-icons a:hover { transform: scale(1.2); }
+
+.sidebar button { 
+    background-color: var(--white); 
+    color: var(--primary-blue); 
+    border: none; 
+    padding: 12px 24px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: all 0.3s ease;
+}
+.sidebar button:hover { 
+    background-color: #f0f0f0; 
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-section { display: flex; align-items: center; padding: 8rem 10%; color: var(--dark-text); gap: 5rem; }
+.about-text h2 { color: var(--primary-blue); font-family: var(--title-font); font-style: italic; font-size: 2.5rem; margin-bottom: 2rem; }
+
+.about-image img { 
+    width: 100%; 
+    max-width: 380px; 
+    border: 5px solid var(--primary-blue); 
+    transition: transform 0.3s ease-in-out; 
+}
+.about-image img:hover { transform: scale(1.05); }
+
+.skills-section { padding: 6rem 10%; background-color: #e9ecf5; color: var(--dark-text); text-align: center; }
+.skills-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 3rem; }
+
+.skill-card { 
+    background: var(--white); 
+    width: 280px; 
+    padding: 2rem; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+.skill-card:hover { 
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+.skill-card img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 1.5rem; }
+.skill-label { color: var(--primary-blue); font-weight: 600; }
+
+
+.site-footer {
+    background-color: #f0f2ff;
+    padding: 80px 20px 0 20px;
+    text-align: center;
+    position: relative;
+    color: var(--dark-text);
+}
+
+.footer-contact { margin-bottom: 60px; }
+.footer-contact p { color: var(--primary-blue); font-size: 1.1rem; margin-bottom: 10px; }
+.footer-contact a { color: var(--primary-blue); text-decoration: none; }
+
+.back-to-top { margin-bottom: 50px; }
+.back-to-top a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 50px; height: 50px; border: 2px solid var(--primary-blue);
+    border-radius: 50%; color: var(--primary-blue); text-decoration: none;
+    font-size: 1.2rem; transition: all 0.3s ease;
+}
+.back-to-top a:hover { background-color: var(--primary-blue); color: var(--white); transform: translateY(-5px); }
+
+.footer-bottom {
+    background-color: var(--primary-blue); padding: 25px 0;
+    margin: 0 -11.2%; width: 122.4%;
+}
+.footer-bottom p { color: var(--white); font-size: 0.9rem; font-weight: 300; margin: 0; }
+.footer-bottom u { cursor: pointer; text-decoration: underline; }
+
+@media (max-width: 900px) { 
+    .container, .about-section { flex-direction: column; height: auto; }
+    .footer-bottom { margin: 0 -20px; width: calc(100% + 40px); }
+}
